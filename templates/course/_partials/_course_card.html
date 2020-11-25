@@ -1,15 +1,17 @@
 <div class="card shadow rounded">
     <div class="card-img card-img-1">
-        <img class="img-default" src="{{ course.picture.url }}" alt="course image">
+        <img class="img-default" src="{{ course.picture.url }}" alt="course image" width="349">
     </div>
     <div class="card-header  bg-white">
-        <a class="text-primary text-bold" href="{{ course.get_absolute_url }}">{{ course.title }}</a>
-        <p class="p-0 m-0">{{ course.description|truncatechars:30 }}</p>
+        <a class="text-primary text-bold" href="{{ course.get_absolute_url }}" style="text-decoration: none;">
+            {{ course.title }} &nbsp 
+        </a><span class="label label-primary"> Free </span>
+        <p class="p-0 m-0">{{ course.description|truncatechars:50 }}</p>
     </div>
 
     <div class="card-body py-1 bg-white">
         <div class="d-flex justify-content-between">
-            <a href="{{ course.join_url }}" class="btn btn-outline-primary">Join</a>
+            <a href="{{ course.get_absolute_url }}" class="btn btn-outline-primary"> Learn </a> <!-- href was course.join -->
         </div>
     </div>
 </div>
